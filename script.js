@@ -1,6 +1,6 @@
 let coordLat
 let coordLon
-let url = "http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=b271b682992be5163f554d1fc1a3df12"
+let url = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=b271b682992be5163f554d1fc1a3df12"
 let form = document.forms[0]
 let lat = 30.31
 let lon = 50.27
@@ -13,6 +13,8 @@ let today = document.querySelector('.today')
 let daysOffive = document.querySelector('.daysOffive')
 let fiveDay = document.querySelector('.fiveday')
 let weelsDay = ['sunday', 'monday', 'tuesday', 'wednesday', 'Thursday', 'Friday ', 'Saturday ']
+let city = document.querySelector('.city')
+let city1 = document.querySelector('.city1')
 
 
 
@@ -82,6 +84,10 @@ function searchWeather(name) {
         .then((data) => {
             console.log('by name', data)
             let cityName = data.name
+            city.innerHTML = ''
+            city.innerHTML += ' in ' + cityName
+            city1.innerHTML = ''
+            city1.innerHTML += ' in ' + cityName
             let coordLat = data.coord.lat
             let coordLon = data.coord.lon
             let url1 = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordLat}&lon=${coordLon}&exclude=minutely&appid=b271b682992be5163f554d1fc1a3df12`
@@ -112,6 +118,7 @@ function searchWeather(name) {
                     // hourly block
 
                 // console.log(hourlyDt.getHours())
+                hourly.innerHTML = ""
                 let hourlyArr = data2.hourly
                 for (let i = 0; i < 24; i++) {
 
@@ -128,6 +135,8 @@ function searchWeather(name) {
                     let hdes = createEl('span', '', hourlyDes)
                     let htemp = createEl('span', '', hourlyTemp + 'C')
                     let hfeel = createEl('span', '', hourlyFeel + 'C')
+
+
                     hourly.append(hDiv)
                     hDiv.append(hdt)
                     hDiv.append(hourlyLink)
@@ -136,6 +145,7 @@ function searchWeather(name) {
                     hDiv.append(hfeel)
 
                 }
+                daysOffive.innerHTML = ""
                 let dailyArr = data2.daily
                 for (let i = 0; i < 5; i++) {
                     let dailyDt = weelsDay[new Date(dailyArr[i].dt * 1000).getDay()]
@@ -150,6 +160,7 @@ function searchWeather(name) {
                     let ddes = createEl('span', '', dailyDes)
                     let dtemp = createEl('span', '', dailyTemp + 'C')
                     console.log(daysOffive)
+
                     daysOffive.append(dDiv)
                     dDiv.append(ddt)
                     dDiv.append(dailyLink)
