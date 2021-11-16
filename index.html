@@ -15,11 +15,35 @@
             <span class="logo">My Weather</span>
             <form>
 
-                <input type="text" placeholder="Веедите город">
+                <input type="text" placeholder="Введите город">
                 <button type="submit"></button>
             </form>
         </div>
     </header>
+    <div class="tabs">
+        <button class="todayBtn" onclick="todayFn()">СЕГОДНЯ</button>
+        <button class="fiveDaysBtn" onclick="fiveDayFn()">5 ДНЕЙ</button>
+    </div>
+    <div class="weatherContainer today">
+        <div class="carrent colorGr">
+            <span>Current Weather</span>
+            <span></span>
+            <span class="dateWeather">Date</span>
+        </div>
+        <div class="hourly mt20 colorGr"></div>
+        <div class="near mt20 colorGr"></div>
+
+    </div>
+    <div class="weatherContainer fiveday d-none">
+        <div class="carrent colorGr">
+            <span>Current Weather</span>
+            <span></span>
+            <span class="dateWeather">Date</span>
+        </div>
+        <div class="daysOffive mt20 colorGr"></div>
+        <div class="near mt20 colorGr"></div>
+
+    </div>
 
     <script src="./script.js"></script>
 </body>

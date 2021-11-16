@@ -4,11 +4,12 @@
 
 body {
     margin: 0;
+    padding: 0 10px 0 10px;
     background-color: rgb(247, 215, 215);
 }
 
 header {
-    margin: 10px;
+    margin: 10px 0px 0px 0px;
 }
 
 .logo {
@@ -16,11 +17,7 @@ header {
     top: 40px;
     left: 20px;
     font-size: 24PX;
-    color: rgb(63, 4, 33);
-}
-
-div {
-    padding: 30px 0
+    color: rgb(182, 179, 182);
 }
 
 form {
@@ -30,7 +27,8 @@ form {
 }
 
 .d6 {
-    background: #B46381;
+    background: #5a5658;
+    padding: 30px 0
 }
 
 .d6 form {
@@ -46,11 +44,12 @@ form {
     border-bottom: 0px;
     outline: none;
     background: rgb(77, 13, 37);
-    transition: .4s cubic-bezier(0, 0.8, 0, 1);
+    transition: .4s;
     position: relative;
     top: 0;
     right: 0;
     z-index: 2;
+    color: rgb(182, 179, 182);
 }
 
 .d6 input:focus {
@@ -76,4 +75,106 @@ form {
     font-family: FontAwesome;
     font-size: 16px;
     color: #F9F0DA;
+}
+
+.tabs {
+    background-color: rgb(77, 13, 37);
+    height: 20px;
+    box-sizing: border-box;
+    font-size: 0;
+    padding-left: 30px;
+}
+
+.tabs button {
+    height: 20px;
+    width: 70px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.tabs button:focus {
+    border: 1px solid black;
+}
+
+
+/* .today {
+    display: none;
+} */
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.colorGr {
+    background: #f0ebec;
+    padding: 10px;
+}
+
+.weatherContainer {
+    background: #5a5658;
+    height: 500px;
+    padding: 20px 30px 0 30px;
+}
+
+.weatherContainer span {
+    color: rgb(17, 85, 148);
+}
+
+.carrent {
+    height: 100px;
+    display: flex;
+    flex-basis: 30%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dateWeather {
+    text-align: end;
+}
+
+.hourly {
+    height: 100px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.weatherLink {
+    width: max-content;
+    height: 80px;
+}
+
+.weatherLink img {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(77, 73, 73);
+}
+
+.hourly {
+    height: 200px;
+    display: flex;
+    overflow: scroll;
+    background-color: rgb(202, 191, 191);
+}
+
+.hourly div {
+    width: 150px;
+}
+
+.d-none {
+    display: none;
+}
+
+.daysOffive {
+    height: 200px;
+    display: flex;
+    overflow: scroll;
+    background-color: rgb(202, 191, 191);
+}
+
+.daysOffive div {
+    width: 150px;
 }
